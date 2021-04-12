@@ -25,4 +25,5 @@ TODOs:
 - [ ] `steps.py` is used to make python code compatible with `hopeit.engine`, but we might can simplify this por this project just to serve a single python function since loading both `steps.py` and the actual code to run seems to be a performance bottleneck.
 - [ ] Python modules could be statically loaded at start time (needs to be Boxed)
 - [ ] Add metrics to the service (similar at what's done in `client.rs`)
+- [ ] do not use "expect"
 - [ ] ... add more ideas ...
