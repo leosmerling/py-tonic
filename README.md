@@ -12,7 +12,7 @@ Main idea comes from an async HTTP framework (https://github.com/hopeit-git/hope
 
 - Machine Learning model serving (where serving logic needs to be written in Python)
 - Real time calculations using Python libraries + existing code
-- Helping Data Scientists to create decenet performance services
+- Helping Data Scientists to create decent performance services
 - ...
 
 ### Test
