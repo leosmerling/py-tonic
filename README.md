@@ -1,6 +1,8 @@
 # py-tonic
 POC (for now) of a gRPC server made in Rust (based on Tonic+PYO3 crates) to server Python code.
 
+__CONTRIBUTORS AND IDEAS WELCOMED!!__
+
 ### Idea
 
 Spin up a gRPC server that runs natively but with the ability
