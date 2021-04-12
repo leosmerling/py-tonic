@@ -6,6 +6,15 @@ POC (for now) of a gRPC server made in Rust (based on Tonic+PYO3 crates) to serv
 Spin up a gRPC server that runs natively but with the ability
 to invoke business logic written in Python.
 
+Main idea comes from an async HTTP framework (https://github.com/hopeit-git/hopeit.engine) where business logic is defined in separated python files, and the framework integrates the HTTP serving+logging+metrics to make life easy for Python developers when creating Microservices or dealing with async scenarios.
+
+## Use Cases
+
+- Machine Learning model serving (where serving logic needs to be written in Python)
+- Real time calculations using Python libraries + existing code
+- Helping Data Scientists to create decenet performance services
+- ...
+
 ### Test
 - Create a python environment with python 3.7+ (i.e. conda environment)
 - Have rust nightly installed
