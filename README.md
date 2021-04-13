@@ -35,6 +35,7 @@ TODOs:
 - [ ] Code generation from proto schemas done using `build.rs` could be triggered from python.
 - [ ] `steps.py` is used to make python code compatible with `hopeit.engine`, but we might can simplify this por this project just to serve a single python function since loading both `steps.py` and the actual code to run seems to be a performance bottleneck.
 - [ ] Python modules could be statically loaded at start time (needs to be Boxed)
+- [ ] One Python module per each rcp service, One Python file per each rpc endpoint. Names could be infered from proto schema.
 - [ ] Add metrics to the service (similar at what's done in `client.rs`)
 - [ ] do not use "expect"
 - [ ] ... add more ideas ...
