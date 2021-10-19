@@ -1,6 +1,6 @@
 [package]
 name = "py-tonic"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Leo Smerling <leosmerling@noreply.github.com>"]
 edition = "2018"
 
@@ -10,27 +10,25 @@ edition = "2018"
 name = "py_tonic"
 crate-type = ["cdylib"]
 
-[[bin]] # Bin to run the HelloWorld gRPC client
-name = "test-client"
-path = "src/client.rs"
+[[bin]]
+name = "test"
+path = "src/test.rs"
 
 [dependencies]
-tonic = "0.4.1"
-prost = "0.7.0"
-tokio = { version = "1.4.0", features = ["macros", "rt-multi-thread", "time"] }
-metered = "0.8.0"
-serde = "1.0.125"
-serde_yaml = "0.8.17"
-log = "0.4.14"
-env_logger = "0.8.3"
-
-[dependencies.pyo3]
-version = "0.13.2"
-features = ["auto-initialize", "extension-module"]
-
-[dependencies.pyo3-asyncio]
-version = "0.13.2"
-features = ["attributes", "tokio-runtime"]
+tonic = "0.5.2"
+prost = "0.8.0"
+tokio = { version = "*", features = ["macros", "rt-multi-thread", "time"] }
+metered = "*"
+serde = "*"
+serde_yaml = "*"
+log = "*"
+env_logger = "*"
+pyo3 = { version = "0.14.5", features = ["auto-initialize"] } #, "extension-module"] }
+pyo3-prost = "0.2.0"
 
 [build-dependencies]
-tonic-build = "0.4.1"
+tonic-build = "*"
+
+# [features]
+# extension-module = ["pyo3/extension-module"]
+# default = ["extension-module"]
