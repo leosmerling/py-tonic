@@ -11,8 +11,8 @@ name = "py_tonic"
 crate-type = ["cdylib"]
 
 [[bin]]
-name = "test"
-path = "src/test.rs"
+name = "service"
+path = "src/service/mod.rs"
 
 [dependencies]
 tonic = "0.5.2"
