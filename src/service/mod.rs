@@ -7,7 +7,7 @@ use simple_process_stats::ProcessStats;
 mod model;
 pub use model::hw::{Extra, HelloRequest, HelloResponse, Status};
 
-pub fn say_hello(request: HelloRequest) -> HelloResponse {
+pub fn say_hello_python(request: HelloRequest) -> HelloResponse {
     Python::with_gil(|py| {
         let module = py.import("greeter.say_hello").expect("err");
         let func = module.getattr("execute").expect("err");
@@ -53,7 +53,7 @@ async fn main() {
             println!("{} ===========================================================", i);
             println!("RUST request: {:?}", request);
         }
-        let result = say_hello(request);
+        let result = say_hello_python(request);
         if i % batch_size == 0 {
             let elapsed = start.elapsed();
             println!("RUST pyres: {:?}", result);
