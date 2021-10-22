@@ -2,20 +2,35 @@ import gc
 import os
 import psutil
 
-from greeter.hw import Extra, HelloRequest, HelloResponse
+from greeter.hw import Extra, HelloRequest, HelloResponse, Status
 
 def execute(request):
-    # print("PYTHON", request, type(request), type(request).__dict__)
-    # print("encode", request.encode())
-    # print("decode", HelloRequest.decode(request.encode()))
-    response = HelloResponse()
-    response.message = f"Hello {request.name}"
-    # response.extra = request.extra
-    extra = Extra()
-    extra.text= request.extra.text + " processed"
-    extra.num = request.extra.num + 1
-    response.extra = extra
+    # print("PYTHON", request, type(request)) #, type(request).__dict__)
+    # print("status", request.extra.status, "new", Status.NEW, "eq")
+    # print("request.extra.status == Status.NEW", request.extra.status == Status.NEW)
+    # print("Status.NEW == request.extra.status", Status.NEW == request.extra.status)
+    
+    # print("hash", hash(request.extra.status), hash(Status.NEW))
+    # status_map = {
+    #     Status.NEW: None,
+    #     Status.OLD: None,
+    #     request.extra.status: request.extra,
+    # }
+    # print(status_map)
+    # print("Status.OLD == Status.OLD", Status.OLD == Status.OLD)
+
+    response = HelloResponse(
+        message=f"Hello {request.name}",
+        extra=Extra(
+            text=request.extra.text + " processed",
+            numx=request.extra.numx + 1,
+            status=Status.OLD if request.extra.status == Status.NEW else Status.UNKNOWN
+        ),
+    )
+
+    # print("request.extra.status == response.extra.status", request.extra.status == response.extra.status)
     # print("PYTHON", response, type(response))
+    # print()
     return response
 
 

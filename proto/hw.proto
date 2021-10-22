@@ -6,9 +6,18 @@ service Greeter {
 }
 
 
+enum Status {
+    UNKNOWN = 0;
+    NEW = 1;
+    OLD = 2;
+}
+
 message Extra {
+    reserved 2;
     string text = 1;
-    uint64 num = 2;
+    //uint64 num = 2;
+    double numx = 3;
+    Status status = 4;
 }
 
 message HelloRequest {

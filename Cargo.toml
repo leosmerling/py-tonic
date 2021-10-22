@@ -26,6 +26,7 @@ env_logger = "*"
 pyo3 = { version = "0.14.5", features = ["auto-initialize"] } #, "extension-module"] }
 pyo3-prost = "0.2.0"
 simple-process-stats = "1.0.0"
+rand = "*"
 
 [build-dependencies]
 tonic-build = "*"

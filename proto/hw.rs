@@ -2,8 +2,11 @@
 pub struct Extra {
     #[prost(string, tag = "1")]
     pub text: ::prost::alloc::string::String,
-    #[prost(uint64, tag = "2")]
-    pub num: u64,
+    ///uint64 num = 2;
+    #[prost(double, tag = "3")]
+    pub numx: f64,
+    #[prost(enumeration = "Status", tag = "4")]
+    pub status: i32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct HelloRequest {
@@ -18,4 +21,11 @@ pub struct HelloResponse {
     pub message: ::prost::alloc::string::String,
     #[prost(message, optional, tag = "2")]
     pub extra: ::core::option::Option<Extra>,
+}
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum Status {
+    Unknown = 0,
+    New = 1,
+    Old = 2,
 }
